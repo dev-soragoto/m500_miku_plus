@@ -1,0 +1,2 @@
+rootProject.name = "m500_miku_plus"
+include ':app'

@@ -1,0 +1,29 @@
+# Gradle
+.gradle/
+build/
+**/build/
+gradlew
+gradlew.bat
+gradle/wrapper/gradle-wrapper.jar
+
+# Local configuration
+local.properties
+*.local.properties
+
+# Android Studio / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Keystore (不提交签名密钥)
+*.keystore
+*.jks
+
+# Output APKs
+*.apk
+*.aab
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MikuMikuHook</string>
+    <string name="hint_search">搜索应用…</string>
+    <string name="hidden_count">已隐藏：%d 个应用</string>
+    <string name="loading">加载中…</string>
+    <string name="dialog_restart_title">重启被 Hook 的应用？</string>
+    <string name="dialog_restart_msg">更改将在重启后生效：\n%s</string>
+    <string name="btn_restart">重启</string>
+    <string name="btn_cancel">取消</string>
+    <string name="pref_hide_icons_title">隐藏图标</string>
+    <string name="pref_hide_icons_summary">选择要从桌面启动器隐藏的应用</string>
+
+    <string name="pref_show_miku_landscape_title">横屏时显示初音</string>
+    <string name="pref_show_miku_landscape_summary">切换到横屏时显示初音</string>
+    <string name="pref_show_miku_portrait_title">竖屏时显示初音</string>
+    <string name="pref_show_miku_portrait_summary">切换到竖屏时显示初音</string>
+
+    <!-- About / MainActivity -->
+    <string name="module_active">✓ 模块已激活</string>
+    <string name="module_inactive">✗ 模块未激活 — 请在 Xposed 管理器中启用此模块</string>
+    <string name="scope_hint">ℹ 建议仅将本模块的作用域设置为 com.android.launcher3。</string>
+    <string name="about_section_features">功能说明</string>
+    <string name="about_feature_hide_icons">桌面图标隐藏</string>
+    <string name="about_feature_hide_icons_desc">选择要从桌面启动器中隐藏的应用。可通过 桌面设置 → 隐藏图标 进入管理页面。</string>
+    <string name="about_feature_rotation">Launcher 允许旋转</string>
+    <string name="about_feature_rotation_desc">在桌面设置中注入"允许旋转"开关，使主屏幕可跟随设备传感器旋转。</string>
+    <string name="about_feature_miku">Miku 显示控制</string>
+    <string name="about_feature_miku_desc">当初音 Miku 桌面主题激活时，在桌面设置中注入横/竖屏分别控制Miku显示的开关。</string>
+    <string name="about_usage_hint">进入 桌面 → 设置 → 隐藏图标（或旋转 / Miku 开关）来管理各项功能。</string>
+</resources>

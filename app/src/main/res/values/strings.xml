@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MikuMikuHook</string>
+    <string name="hint_search">Search apps…</string>
+    <string name="hidden_count">Hidden: %d app(s)</string>
+    <string name="loading">Loading…</string>
+    <string name="dialog_restart_title">Restart hooked apps?</string>
+    <string name="dialog_restart_msg">Changes will take effect after restarting:\n%s</string>
+    <string name="btn_restart">Restart</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="pref_hide_icons_title">Hide Icons</string>
+    <string name="pref_hide_icons_summary">Select apps to hide from the launcher drawer</string>
+
+    <string name="pref_show_miku_landscape_title">Show Miku in landscape</string>
+    <string name="pref_show_miku_landscape_summary">Show the Miku pet when in landscape orientation</string>
+    <string name="pref_show_miku_portrait_title">Show Miku in portrait</string>
+    <string name="pref_show_miku_portrait_summary">Show the Miku pet when in portrait orientation</string>
+
+    <!-- About / MainActivity -->
+    <string name="module_active">✓ Module is active</string>
+    <string name="module_inactive">✗ Module is NOT active — please enable it in your Xposed manager</string>
+    <string name="scope_hint">ℹ It is recommended to scope this module to com.android.launcher3 only.</string>
+    <string name="about_section_features">Features</string>
+    <string name="about_feature_hide_icons">Hide Launcher Icons</string>
+    <string name="about_feature_hide_icons_desc">Select which apps should be hidden from the launcher drawer. Accessible from Launcher Settings → Hide Icons.</string>
+    <string name="about_feature_rotation">Allow Home Screen Rotation</string>
+    <string name="about_feature_rotation_desc">Adds an "Allow rotation" toggle in Launcher Settings so the home screen can rotate with the device sensor.</string>
+    <string name="about_feature_miku">Miku Visibility Control</string>
+    <string name="about_feature_miku_desc">When the Miku desktop pet theme is active, adds toggles in Launcher Settings to show or hide the pet separately in portrait and landscape orientations.</string>
+    <string name="about_usage_hint">To manage settings, open Launcher → Settings → Hide Icons (or the rotation / Miku toggles).</string>
+</resources>
