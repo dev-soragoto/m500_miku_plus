@@ -13,7 +13,8 @@
             android:id="@+id/imgIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:scaleType="fitCenter"/>
+            android:scaleType="fitCenter"
+            android:contentDescription="@null"/>
 
     <LinearLayout
             android:layout_width="0dp"

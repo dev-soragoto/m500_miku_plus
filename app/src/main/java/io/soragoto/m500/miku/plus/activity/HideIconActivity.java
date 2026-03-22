@@ -29,8 +29,6 @@ import java.util.*;
 
 public class HideIconActivity extends Activity {
 
-    private static final String TAG = "XposedHide";
-
     private SharedPreferences prefs;
     private AppPickerAdapter adapter;
     private TextView txtHiddenCount;
@@ -40,7 +38,7 @@ public class HideIconActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hide_icon);
 
-        prefs = getSharedPreferences(Const.PREFS_NAME, MODE_PRIVATE);
+        prefs = getSharedPreferences(Const.PREF_FILE_MODULE, MODE_PRIVATE);
 
         EditText editSearch = findViewById(R.id.editSearch);
         txtHiddenCount = findViewById(R.id.txtHiddenCount);
@@ -78,13 +76,13 @@ public class HideIconActivity extends Activity {
 
         getOnBackInvokedDispatcher().registerOnBackInvokedCallback(
                 OnBackInvokedDispatcher.PRIORITY_DEFAULT, this::handleBackPress);
-        Log.d(TAG, "OnBackInvokedCallback registered");
+        Log.d(Const.TAG, "OnBackInvokedCallback registered");
 
         loadAppsAsync();
     }
 
     private void loadAppsAsync() {
-        Set<String> hidden = new HashSet<>(prefs.getStringSet(Const.KEY_HIDDEN_PACKAGES, new HashSet<>()));
+        Set<String> hidden = new HashSet<>(prefs.getStringSet(Const.PREF_HIDDEN_PACKAGES, new HashSet<>()));
         Handler handler = new Handler(Looper.getMainLooper());
 
         new Thread(() -> {
@@ -92,7 +90,7 @@ public class HideIconActivity extends Activity {
                 LauncherApps launcherApps = (LauncherApps) getSystemService(LAUNCHER_APPS_SERVICE);
                 List<LauncherActivityInfo> infos = launcherApps.getActivityList(null, Process.myUserHandle());
 
-                Log.d(TAG, "loadAppsAsync: getActivityList returned " + infos.size() + " entries");
+                Log.d(Const.TAG, "loadAppsAsync: getActivityList returned " + infos.size() + " entries");
 
                 Map<String, AppInfo> seen = new LinkedHashMap<>();
                 for (LauncherActivityInfo info : infos) {
@@ -107,7 +105,7 @@ public class HideIconActivity extends Activity {
                     }
                 }
 
-                Log.d(TAG, "loadAppsAsync: unique packages=" + seen.size());
+                Log.d(Const.TAG, "loadAppsAsync: unique packages=" + seen.size());
 
                 List<AppInfo> list = new ArrayList<>(seen.values());
                 list.sort((a, b) -> a.label.compareToIgnoreCase(b.label));
@@ -117,7 +115,7 @@ public class HideIconActivity extends Activity {
                     updateHiddenCount();
                 });
             } catch (Throwable t) {
-                Log.e(TAG, "loadAppsAsync: exception", t);
+                Log.e(Const.TAG, "loadAppsAsync: exception", t);
             }
         }).start();
     }
@@ -127,7 +125,7 @@ public class HideIconActivity extends Activity {
         for (AppInfo info : adapter.getAllItems()) {
             if (info.checked) hidden.add(info.packageName);
         }
-        prefs.edit().putStringSet(Const.KEY_HIDDEN_PACKAGES, hidden).apply();
+        prefs.edit().putStringSet(Const.PREF_HIDDEN_PACKAGES, hidden).apply();
     }
 
     private void updateHiddenCount() {
@@ -140,7 +138,7 @@ public class HideIconActivity extends Activity {
 
     private void handleBackPress() {
         List<String> hookedPackages = queryHookedPackages();
-        Log.d(TAG, "handleBackPress: hookedPackages=" + hookedPackages);
+        Log.d(Const.TAG, "handleBackPress: hookedPackages=" + hookedPackages);
         if (hookedPackages.isEmpty()) {
             finish();
             return;
@@ -159,27 +157,27 @@ public class HideIconActivity extends Activity {
 
     private List<String> queryHookedPackages() {
         List<String> result = new ArrayList<>();
-        Uri uri = Uri.parse("content://io.soragoto.m500.miku.plus.provider/hooked");
+        Uri uri = Uri.parse(Const.URI_HOOKED_PACKAGES);
         try (Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
             if (cursor != null) {
                 while (cursor.moveToNext()) result.add(cursor.getString(0));
             }
         } catch (Exception e) {
-            Log.e(TAG, "queryHookedPackages failed", e);
+            Log.e(Const.TAG, "queryHookedPackages failed", e);
         }
         return result;
     }
 
     private void restartPackages(List<String> packages) {
-        Uri restartUri = Uri.parse("content://io.soragoto.m500.miku.plus.provider/restart");
+        Uri restartUri = Uri.parse(Const.URI_RESTART_SIGNAL);
         for (String pkg : packages) {
             try {
                 ContentValues cv = new ContentValues(1);
-                cv.put("package", pkg);
+                cv.put(Const.COL_PACKAGE, pkg);
                 getContentResolver().insert(restartUri, cv);
-                Log.d(TAG, "sent restart signal for: " + pkg);
+                Log.d(Const.TAG, "sent restart signal for: " + pkg);
             } catch (Exception e) {
-                Log.e(TAG, "failed to send restart signal for " + pkg, e);
+                Log.e(Const.TAG, "failed to send restart signal for " + pkg, e);
             }
         }
     }

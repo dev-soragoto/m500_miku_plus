@@ -4,10 +4,13 @@
     <string name="hint_search">Search apps…</string>
     <string name="hidden_count">Hidden: %d app(s)</string>
     <string name="loading">Loading…</string>
-    <string name="dialog_restart_title">Restart hooked apps?</string>
+    <string name="dialog_restart_title">Restart app?</string>
     <string name="dialog_restart_msg">Changes will take effect after restarting:\n%s</string>
     <string name="btn_restart">Restart</string>
     <string name="btn_cancel">Cancel</string>
+    <string name="pref_allow_rotation_title">Allow rotation</string>
+    <string name="pref_allow_rotation_summary">Allow the home screen to rotate with the device</string>
+
     <string name="pref_hide_icons_title">Hide Icons</string>
     <string name="pref_hide_icons_summary">Select apps to hide from the launcher drawer</string>
 
@@ -22,10 +25,33 @@
     <string name="scope_hint">ℹ It is recommended to scope this module to com.android.launcher3 only.</string>
     <string name="about_section_features">Features</string>
     <string name="about_feature_hide_icons">Hide Launcher Icons</string>
-    <string name="about_feature_hide_icons_desc">Select which apps should be hidden from the launcher drawer. Accessible from Launcher Settings → Hide Icons.</string>
+    <string name="about_feature_hide_icons_desc">Select which apps should be hidden from the launcher drawer. Accessible
+        from Launcher Settings → Hide Icons.
+    </string>
     <string name="about_feature_rotation">Allow Home Screen Rotation</string>
-    <string name="about_feature_rotation_desc">Adds an "Allow rotation" toggle in Launcher Settings so the home screen can rotate with the device sensor.</string>
+    <string name="about_feature_rotation_desc">Adds an "Allow rotation" toggle in Launcher Settings so the home screen
+        can rotate with the device sensor.
+    </string>
     <string name="about_feature_miku">Miku Visibility Control</string>
-    <string name="about_feature_miku_desc">When the Miku desktop pet theme is active, adds toggles in Launcher Settings to show or hide the pet separately in portrait and landscape orientations.</string>
-    <string name="about_usage_hint">To manage settings, open Launcher → Settings → Hide Icons (or the rotation / Miku toggles).</string>
+    <string name="about_feature_miku_desc">When the Miku desktop pet theme is active, adds toggles in Launcher Settings
+        to show or hide the pet separately in portrait and landscape orientations.
+    </string>
+
+    <!-- Landscape Background -->
+    <string name="pref_landscape_bg_title">Landscape Background</string>
+    <string name="pref_landscape_bg_summary">Enable a separate wallpaper when in landscape mode</string>
+    <string name="pref_landscape_bg_pick_title">Set Landscape Wallpaper</string>
+    <string name="pref_landscape_bg_pick_summary">Open module app to select or change the landscape background image
+    </string>
+    <string name="about_feature_landscape_bg">Landscape Background</string>
+    <string name="about_feature_landscape_bg_desc">Set a dedicated background image for landscape mode.</string>
+    <string name="landscape_bg_pick_btn">Pick Image</string>
+    <string name="landscape_bg_clear_btn">Clear</string>
+    <string name="landscape_bg_set_ok">Landscape background updated.</string>
+    <string name="landscape_bg_cleared">Landscape background cleared.</string>
+    <string name="landscape_bg_no_image">No landscape background set</string>
+    <string name="landscape_bg_crop_not_supported">Crop UI not supported on this device.</string>
+    <string name="landscape_bg_crop_failed">Crop failed. Please try another image.</string>
+    <string name="crop_confirm">Confirm</string>
+    <string name="crop_cancel">Cancel</string>
 </resources>

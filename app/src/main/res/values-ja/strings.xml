@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MikuMikuHook</string>
+    <string name="hint_search">アプリを検索…</string>
+    <string name="hidden_count">非表示：%d 件</string>
+    <string name="loading">読み込み中…</string>
+    <string name="dialog_restart_title">アプリを再起動しますか？</string>
+    <string name="dialog_restart_msg">変更は再起動後に反映されます：\n%s</string>
+    <string name="btn_restart">再起動</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="pref_allow_rotation_title">回転を許可</string>
+    <string name="pref_allow_rotation_summary">ホーム画面をデバイスの向きに合わせて回転させる</string>
+
+    <string name="pref_hide_icons_title">アイコンを非表示</string>
+    <string name="pref_hide_icons_summary">ランチャーから非表示にするアプリを選択</string>
+
+    <string name="pref_show_miku_landscape_title">横画面でミクを表示</string>
+    <string name="pref_show_miku_landscape_summary">横向き時にミクを表示する</string>
+    <string name="pref_show_miku_portrait_title">縦画面でミクを表示</string>
+    <string name="pref_show_miku_portrait_summary">縦向き時にミクを表示する</string>
+
+    <!-- About / MainActivity -->
+    <string name="module_active">✓ モジュールが有効です</string>
+    <string name="module_inactive">✗ モジュールが無効です — Xposed マネージャーで有効にしてください</string>
+    <string name="scope_hint">ℹ このモジュールのスコープは com.android.launcher3 のみに設定することをおすすめします。</string>
+    <string name="about_section_features">機能説明</string>
+    <string name="about_feature_hide_icons">ランチャーアイコン非表示</string>
+    <string name="about_feature_hide_icons_desc">ランチャーから非表示にするアプリを選択できます。ランチャー設定 → アイコンを非表示 から管理できます。
+    </string>
+    <string name="about_feature_rotation">ホーム画面の回転許可</string>
+    <string name="about_feature_rotation_desc">ランチャー設定に「回転を許可」トグルを追加し、デバイスのセンサーに合わせてホーム画面を回転できるようにします。
+    </string>
+    <string name="about_feature_miku">ミク表示コントロール</string>
+    <string name="about_feature_miku_desc">ミクデスクトップペットテーマが有効な場合、ランチャー設定に縦画面・横画面それぞれのミク表示トグルを追加します。
+    </string>
+
+    <!-- 横画面背景 -->
+    <string name="pref_landscape_bg_title">横画面の背景</string>
+    <string name="pref_landscape_bg_summary">横向き時に独自の壁紙を使用する</string>
+    <string name="pref_landscape_bg_pick_title">横画面の壁紙を設定</string>
+    <string name="pref_landscape_bg_pick_summary">モジュールアプリを開いて横画面の背景画像を選択・変更する</string>
+    <string name="about_feature_landscape_bg">横画面の背景</string>
+    <string name="about_feature_landscape_bg_desc">横向きモード専用の背景画像を設定します。</string>
+    <string name="landscape_bg_pick_btn">画像を選択</string>
+    <string name="landscape_bg_clear_btn">クリア</string>
+    <string name="landscape_bg_set_ok">横画面の壁紙を更新しました。</string>
+    <string name="landscape_bg_cleared">横画面の壁紙をクリアしました。</string>
+    <string name="landscape_bg_no_image">横画面の壁紙が設定されていません</string>
+    <string name="landscape_bg_crop_not_supported">このデバイスではトリミング機能がサポートされていません。</string>
+    <string name="landscape_bg_crop_failed">トリミングに失敗しました。別の画像をお試しください。</string>
+    <string name="crop_confirm">確定</string>
+    <string name="crop_cancel">キャンセル</string>
+</resources>

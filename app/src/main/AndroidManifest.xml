@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Required on API 30+ to query all installed packages (package visibility) -->
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
 
     <application
-            android:allowBackup="true"
+            android:dataExtractionRules="@xml/data_extraction_rules"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
 
@@ -26,6 +27,16 @@
                 android:enableOnBackInvokedCallback="true"
         />
 
+        <activity
+                android:name="io.soragoto.m500.miku.plus.activity.LandscapeWallpaperActivity"
+                android:exported="true"
+                android:enableOnBackInvokedCallback="true"
+        />
+
+        <activity
+                android:name="io.soragoto.m500.miku.plus.activity.CropActivity"
+        />
+
         <meta-data android:name="xposedmodule" android:value="true"/>
         <meta-data android:name="xposeddescription" android:value="Hiby M500_MIKU plus"/>
         <meta-data android:name="xposedminversion" android:value="53"/>
@@ -34,7 +45,14 @@
         <provider
                 android:name="io.soragoto.m500.miku.plus.provider.HideListProvider"
                 android:authorities="io.soragoto.m500.miku.plus.provider"
-                android:exported="true"/>
+                android:exported="true"
+                tools:ignore="ExportedContentProvider"/>
+
+        <provider
+                android:name="io.soragoto.m500.miku.plus.provider.LandscapeWallpaperProvider"
+                android:authorities="io.soragoto.m500.miku.plus.wallpaper.provider"
+                android:exported="true"
+                tools:ignore="ExportedContentProvider"/>
     </application>
 
 </manifest>

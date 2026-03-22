@@ -3,11 +3,12 @@ package io.soragoto.m500.miku.plus.hook;
 import android.content.Context;
 import android.graphics.Rect;
 import android.view.MotionEvent;
-import android.view.WindowManager;
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
 import de.robv.android.xposed.XposedHelpers;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
+import io.soragoto.m500.miku.plus.Const;
+import io.soragoto.m500.miku.plus.util.XposedUtils;
 
 /**
  * 修复 Launcher3 横屏时 FloatMikuView 拖动边界异常问题。
@@ -76,8 +77,9 @@ public class MikuFixHook implements IXposedHookLoadPackage {
 
     @Override
     public void handleLoadPackage(XC_LoadPackage.LoadPackageParam loadPackageParam) {
-        if (!"com.android.launcher3".equals(loadPackageParam.packageName))
+        if (!Const.LAUNCHER_PKG.equals(loadPackageParam.packageName)) {
             return;
+        }
 
         XposedHelpers.findAndHookMethod(
                 "com.android.launcher3.floatmiku.FloatMikuView",
@@ -90,8 +92,7 @@ public class MikuFixHook implements IXposedHookLoadPackage {
                         try {
                             Object thisObj = param.thisObject;
                             Context ctx = (Context) XposedHelpers.getObjectField(thisObj, "mContext");
-                            WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
-                            Rect bounds = wm.getCurrentWindowMetrics().getBounds();
+                            Rect bounds = XposedUtils.getWindowBounds(ctx);
                             XposedHelpers.setIntField(thisObj, "winW", bounds.right);
                             XposedHelpers.setIntField(thisObj, "winH", bounds.bottom);
                         } catch (Throwable ignored) {

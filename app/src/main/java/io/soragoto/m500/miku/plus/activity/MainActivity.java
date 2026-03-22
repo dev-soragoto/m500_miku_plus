@@ -16,8 +16,6 @@ import java.util.Set;
 
 public class MainActivity extends Activity {
 
-    private static final String TAG = "XposedHide";
-    private static final String LAUNCHER3_PKG = "com.android.launcher3";
     private static final long BOOT_TOLERANCE_MS = 60_000L;
 
     @Override
@@ -25,20 +23,20 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_about);
 
-        SharedPreferences prefs = getSharedPreferences(Const.PREFS_NAME, MODE_PRIVATE);
+        SharedPreferences prefs = getSharedPreferences(Const.PREF_FILE_MODULE, MODE_PRIVATE);
 
-        long storedBootMillis = prefs.getLong(Const.KEY_HOOKED_BOOT_MILLIS, 0);
+        long storedBootMillis = prefs.getLong(Const.PREF_HOOKED_BOOT_MILLIS, 0);
         long currentBootMillis = System.currentTimeMillis() - SystemClock.elapsedRealtime();
         boolean isFresh = storedBootMillis > 0
                 && Math.abs(currentBootMillis - storedBootMillis) < BOOT_TOLERANCE_MS;
 
         Set<String> hooked = isFresh
-                ? prefs.getStringSet(Const.KEY_HOOKED_PACKAGES, new HashSet<>())
+                ? prefs.getStringSet(Const.PREF_HOOKED_PACKAGES, new HashSet<>())
                 : new HashSet<>();
 
-        boolean isActive = hooked.contains(LAUNCHER3_PKG);
+        boolean isActive = hooked.contains(Const.LAUNCHER_PKG);
 
-        Log.d(TAG, "isFresh=" + isFresh + " hooked=" + hooked + " isActive=" + isActive);
+        Log.d(Const.TAG, "isFresh=" + isFresh + " hooked=" + hooked + " isActive=" + isActive);
 
         TextView txtStatus = findViewById(R.id.txtModuleStatus);
         if (isActive) {
@@ -58,4 +56,3 @@ public class MainActivity extends Activity {
         txtHint.setVisibility(View.VISIBLE);
     }
 }
-

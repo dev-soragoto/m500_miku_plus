@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+        <!-- Current background preview -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_feature_landscape_bg_desc"
+                android:textSize="13sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="16dp"/>
+        <ImageView
+                android:id="@+id/imgLandscapeBgPreview"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@null"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"/>
+
+        <TextView
+                android:id="@+id/txtLandscapeBgNoImage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/landscape_bg_no_image"
+                android:textSize="13sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:gravity="center"
+                android:padding="24dp"
+                android:visibility="visible"
+                android:layout_marginBottom="8dp"/>
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+            <Button
+                    android:id="@+id/btnPickLandscapeBg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/landscape_bg_pick_btn"
+                    android:layout_marginEnd="8dp"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+            <Button
+                    android:id="@+id/btnClearLandscapeBg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/landscape_bg_clear_btn"
+                    style="?android:attr/buttonBarButtonStyle"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

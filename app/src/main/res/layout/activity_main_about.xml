@@ -93,6 +93,22 @@
                 android:textColor="?android:attr/textColorSecondary"
                 android:layout_marginBottom="24dp"/>
 
+        <!-- Landscape Background feature section -->
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_feature_landscape_bg"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="2dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/about_feature_landscape_bg_desc"
+                android:textSize="13sp"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_marginBottom="12dp"/>
 
     </LinearLayout>
 

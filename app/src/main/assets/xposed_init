@@ -1,4 +1,5 @@
 io.soragoto.m500.miku.plus.hook.HideAppsHook
-io.soragoto.m500.miku.plus.hook.RotationHook
-io.soragoto.m500.miku.plus.hook.MikuFixHook
 io.soragoto.m500.miku.plus.hook.MikuVisibilityHook
+io.soragoto.m500.miku.plus.hook.MikuFixHook
+io.soragoto.m500.miku.plus.hook.LandscapeWallpaperHook
+io.soragoto.m500.miku.plus.hook.RotationHook
