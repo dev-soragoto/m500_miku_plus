@@ -1,10 +1,14 @@
+|                  English                   |                     中文                     |                    日本語                     |
+|:------------------------------------------:|:------------------------------------------:|:------------------------------------------:|
+| <img src="doc/setting_en.png" width="200"> | <img src="doc/setting_zh.png" width="200"> | <img src="doc/setting_jp.png" width="200"> |
+
+--- 
+
 # MikuMikuHook
 
 A Xposed module for HiBy M500, enhancing the built-in Launcher3 with extra controls.
 
-|                  English                   |                     中文                     |                    日本語                     |
-|:------------------------------------------:|:------------------------------------------:|:------------------------------------------:|
-| <img src="doc/setting_en.png" width="200"> | <img src="doc/setting_zh.png" width="200"> | <img src="doc/setting_jp.png" width="200"> |
+> Full writeup (Chinese): [soragoto.io/posts/m500](https://soragoto.io/posts/m500/)
 
 ## Features
 
@@ -12,7 +16,7 @@ A Xposed module for HiBy M500, enhancing the built-in Launcher3 with extra contr
 - Toggle home screen rotation
 - Control Miku pet visibility by orientation
 - Set a dedicated wallpaper for landscape mode
-- Fix Miku drag boundary in landscape mode
+- Adapt Miku drag boundary for landscape mode
 
 ## Requirements
 
@@ -32,7 +36,11 @@ A Xposed module for HiBy M500, enhancing the built-in Launcher3 with extra contr
 
 ---
 
+# MikuMikuHook
+
 一个为 HiBy M500 设计的 Xposed 模块，为内置 Launcher3 添加额外功能。
+
+> 折腾过程（中文）：[星海贝M500折腾记录](https://soragoto.io/posts/m500/)
 
 ## 功能
 
@@ -40,7 +48,7 @@ A Xposed module for HiBy M500, enhancing the built-in Launcher3 with extra contr
 - 开关桌面自动旋转
 - 按横竖屏分别控制桌面 Miku 显示
 - 为横屏模式单独设置壁纸
-- 修复横屏下 Miku 拖拽边界异常
+- 适配横屏模式下 Miku 拖拽边界
 
 ## 环境要求
 
@@ -60,7 +68,11 @@ A Xposed module for HiBy M500, enhancing the built-in Launcher3 with extra contr
 
 ---
 
+# MikuMikuHook
+
 HiBy M500 向けの Xposed モジュールです。内蔵 Launcher3 に追加機能を提供します。
+
+> 詳細な記録（中国語）：[soragoto.io/posts/m500](https://soragoto.io/posts/m500/)
 
 ## 機能
 
@@ -68,7 +80,7 @@ HiBy M500 向けの Xposed モジュールです。内蔵 Launcher3 に追加機
 - ホーム画面の自動回転トグル
 - 縦画面・横画面それぞれでミク表示を制御
 - 横向き時に専用壁紙を設定
-- 横画面でのミクドラッグ境界バグを修正
+- 横画面向けにミクのドラッグ境界を調整
 
 ## 動作環境
 
